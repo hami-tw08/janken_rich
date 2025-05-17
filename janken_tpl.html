@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header class="header">
+
+  <div  class="text">グーチョキパー、　ドレ　ヲ　ダス？</div>
+</header>
+
+<main>
+
+  <ul>
+    <li id="gu_btn">
+      <img src="gu.png" alt="" class="te"></li>
+    <li id="cho_btn">
+      <img src="cho.png" alt="" class="te"></li>
+    <li id="par_btn">
+      <img src="pa.png" alt="" class="te"></li>
+  </ul>
+  <div class="text">ボク　ハ　コレダヨ</div>
+  <div class="pc_hands_container">
+    <div id="pc_hands"></div></div>
+    <div class="text">ジャンケン　ノ　ケッカ　ハ・・・</div>
+  <div class="judgment_container">
+    <p id="judgment"></p>
+  </div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+$("#gu_btn").on("click",function(){
+const r= Math.ceil(Math.random()*3);
+if(r==1){
+  $("#pc_hands").html('<img src="pcgu.png" class="pc">');
+  // $("#pc_hands").html("グー");
+  $("#judgment").html('<img src="draw.png" class="takao">');
+}
+if(r==2){
+ $("#pc_hands").html('<img src="pccho.png" class="pc">');
+  // $("#pc_hands").html("チョキ");
+  $("#judgment").html('<img src="youwin.png" class="takao">');
+}
+if(r==3){
+ $("#pc_hands").html('<img src="pcpa.png" class="pc">');
+  // $("#pc_hands").html("パー");
+  $("#judgment").html('<img src="youlose.png" class="takao">');
+}
+});
+
+$("#cho_btn").on("click",function(){
+const r= Math.ceil(Math.random()*3);
+if(r==1){
+  $("#pc_hands").html('<img src="pcgu.png" class="pc">');
+  // $("#pc_hands").html("グー");
+  $("#judgment").html('<img src="youlose.png" class="takao">');
+}
+if(r==2){
+ $("#pc_hands").html('<img src="pccho.png" class="pc">');
+  // $("#pc_hands").html("チョキ");
+  $("#judgment").html('<img src="draw.png" class="takao">');
+}
+if(r==3){
+$("#pc_hands").html('<img src="pcpa.png" class="pc">');
+  // $("#pc_hands").html("パー");
+  $("#judgment").html('<img src="youwin.png" class="takao">');
+}
+});
+    
+$("#par_btn").on("click",function(){
+const r= Math.ceil(Math.random()*3);
+if(r==1){
+  $("#pc_hands").html('<img src="pcgu.png" class="pc">');
+  // $("#pc_hands").html("グー");
+  $("#judgment").html('<img src="youwin.png" class="takao">');
+}
+if(r==2){
+ $("#pc_hands").html('<img src="pccho.png" class="pc">');
+  // $("#pc_hands").html("チョキ");
+  $("#judgment").html('<img src="youlose.png" class="takao">');
+}
+if(r==3){
+$("#pc_hands").html('<img src="pcpa.png" class="pc">');
+  // $("#pc_hands").html("パー");
+  $("#judgment").html('<img src="draw.png" class="takao">');
+}
+});    
+    
+    
+    
+    
+    
+
+</script>
+</body>
+</html>
